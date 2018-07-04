@@ -116,7 +116,7 @@ namespace PDollarGestureRecognizer
                         currentStroke = points[i].StrokeID;
                     }
 
-                    sw.WriteLine("\t\t<Point X = \"{0}\" Y = \"{1}\" T = \"0\" Pressure = \"0\" />",
+                    sw.WriteLine("\t\t<Point X = \"{0}\" Y = \"{1}\" T = \"0\" Pressure = \"255\" />",
                         points[i].X, points[i].Y
                     );
                 }
