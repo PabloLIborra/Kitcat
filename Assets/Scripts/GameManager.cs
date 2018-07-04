@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 
                         if(e != null && e.direction == weapons[i].clearDirection && e.activated)
                         {
-                            Destroy(enemies[j]);
+                            //Destroy(enemies[j]);
                         }
                     }
 

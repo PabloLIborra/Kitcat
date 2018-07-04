@@ -40,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour {
                     positionX = tower.transform.position.x;
                 }
 
-                if (t.position.x > positionX - tower.GetComponent<SpriteRenderer>().size.x/2)
+                if (t.position.x > positionX - (tower.GetComponent<SpriteRenderer>().size.x/2 + gameObject.GetComponent<SpriteRenderer>().size.x / 2))
                 {
                     Destroy(gameObject);
                 }
@@ -50,7 +50,14 @@ public class EnemyBehaviour : MonoBehaviour {
             {
                 t.position = new Vector3(t.position.x - velocity * Time.deltaTime, t.position.y, t.position.z);
 
-                if (t.position.x < 3)
+                float positionX = Screen.width / 2;
+
+                if (tower != null)
+                {
+                    positionX = tower.transform.position.x;
+                }
+
+                if (t.position.x < positionX + (tower.GetComponent<SpriteRenderer>().size.x / 2 + gameObject.GetComponent<SpriteRenderer>().size.x / 2))
                 {
                     Destroy(gameObject);
                 }
@@ -61,7 +68,14 @@ public class EnemyBehaviour : MonoBehaviour {
                 t.position = new Vector3(t.position.x, t.position.y - velocity * Time.deltaTime, t.position.z);
                 t.localScale = new Vector3(t.localScale.x + scaleFactor * Time.deltaTime, t.localScale.y + scaleFactor * Time.deltaTime, t.localScale.z);
 
-                if(t.position.y < 1)
+                float positionY = Screen.height / 2;
+
+                if (tower != null)
+                {
+                    positionY = tower.transform.position.y;
+                }
+
+                if (t.position.y < positionY + (tower.GetComponent<SpriteRenderer>().size.y / 2 + gameObject.GetComponent<SpriteRenderer>().size.y / 2))
                 {
                     Destroy(gameObject);
                 }

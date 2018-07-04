@@ -6,6 +6,7 @@ public class Piece : MonoBehaviour {
 
     public List<string> totalGestures = new List<string>();
     public List<string> gestures = new List<string>();
+    public bool completed = false;
 
     // Use this for initialization
     void Start () {
@@ -14,6 +15,14 @@ public class Piece : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(totalGestures.Count == gestures.Count)
+        {
+            completed = true;
+        }
 	}
+
+    public void checkGesture(string name)
+    {
+        if(totalGestures[gesture])
+    }
 }
