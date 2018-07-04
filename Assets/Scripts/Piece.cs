@@ -23,6 +23,9 @@ public class Piece : MonoBehaviour {
 
     public void checkGesture(string name)
     {
-        if(totalGestures[gesture])
+        if(totalGestures[gestures.Count] == name)
+        {
+            gestures.Add(name);
+        }
     }
 }
