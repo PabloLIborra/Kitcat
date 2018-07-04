@@ -12,6 +12,8 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public float scaleFactor = 0.5f;
 
+    public Weapon tower;
+
     Transform t;
 
     // Use this for initialization
@@ -22,8 +24,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(Screen.width);
-        Debug.Log(t.position.x);
+        //Debug.Log(Screen.width);
+        //Debug.Log(t.position.x);
         if (activated)
         {
             //Move from left to right
@@ -31,7 +33,14 @@ public class EnemyBehaviour : MonoBehaviour {
             {
                 t.position = new Vector3(t.position.x + velocity * Time.deltaTime, t.position.y, t.position.z);
 
-                if (t.position.x > (Screen.width / 2) - Screen.width*0.1)
+                float positionX = Screen.width / 2;
+
+                if (tower != null)
+                {
+                    positionX = tower.transform.position.x;
+                }
+
+                if (t.position.x > positionX - tower.GetComponent<SpriteRenderer>().size.x/2)
                 {
                     Destroy(gameObject);
                 }

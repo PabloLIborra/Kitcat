@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public static Weapon[] weapons;
+    public Weapon[] weapons;
     public float ongoingTime;
 
 
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
                     Debug.Log("Weapon " + i + " triggered : " + ongoingTime);
                     //Detect enemies that should be destroy and destroy them
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    Debug.Log(enemies.Length);
 
                     for(int j = 0; j < enemies.Length; j++)
                     {
