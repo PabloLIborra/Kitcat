@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour {
     public Weapon[] weapons;
     public float ongoingTime;
 
-
     // Use this for initialization
     void Start () {
 
@@ -29,18 +28,18 @@ public class GameManager : MonoBehaviour {
                 //If after adding a piece weapon is ready to shoot
                 if (weapons[i].addPiece())
                 {
-                    Debug.Log("Weapon " + i + " triggered : " + ongoingTime);
+                    //Debug.Log("Weapon " + i + " triggered : " + ongoingTime);
                     //Detect enemies that should be destroy and destroy them
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-                    Debug.Log(enemies.Length);
+                    //Debug.Log(enemies.Length);
 
                     for(int j = 0; j < enemies.Length; j++)
                     {
-                        EnemyBehaviour e = enemies[i].GetComponent<EnemyBehaviour>();
+                        EnemyBehaviour e = enemies[j].GetComponent<EnemyBehaviour>();
 
-                        if(e.direction == weapons[i].clearDirection && e.activated)
+                        if(e != null && e.direction == weapons[i].clearDirection && e.activated)
                         {
-                            Destroy(e);
+                            Destroy(enemies[j]);
                         }
                     }
 
