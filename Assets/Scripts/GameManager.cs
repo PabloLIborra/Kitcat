@@ -1,16 +1,18 @@
-﻿using System.Collections;
+﻿using PDollarGestureRecognizer;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public Weapon[] weapons;
+    public static Weapon[] weapons;
     public float ongoingTime;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    // Use this for initialization
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -46,7 +48,9 @@ public class GameManager : MonoBehaviour {
             
         }
         
-
-
     }
+    
 }
+
+
+

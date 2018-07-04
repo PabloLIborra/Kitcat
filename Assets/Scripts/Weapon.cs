@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
+public class Weapon : Piece {
 
     public int length;  //Number of pieces that have to be completed in order to unleash the weapon power
     public int clearDirection;  //Direction that the weapon clears when loaded
+
+    public Piece[] totalPieces;
+    public Piece[] pieces;
 
     private int remaining;  //Number of pieces remaining in order to complete the weapon
 
