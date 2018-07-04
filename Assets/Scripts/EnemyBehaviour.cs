@@ -20,15 +20,18 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(activated)
+	void Update ()
+    {
+        Debug.Log(Screen.width);
+        Debug.Log(t.position.x);
+        if (activated)
         {
             //Move from left to right
             if (direction == 1)
             {
                 t.position = new Vector3(t.position.x + velocity * Time.deltaTime, t.position.y, t.position.z);
 
-                if (t.position.x > -2)
+                if (t.position.x > (Screen.width / 2) - Screen.width*0.1)
                 {
                     Destroy(gameObject);
                 }
